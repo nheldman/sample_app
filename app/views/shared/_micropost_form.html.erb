@@ -1,8 +1,8 @@
 <script type="text/javascript">
-  $j(function(){
-    $j('#micropost_content').keyup(function() {
-      var charsLeft = 140 - $j(this).val().length;
-      var $cl = $j('#charsLeft')
+  $(function(){
+    $('#micropost_content').keyup(function() {
+      var charsLeft = 140 - $(this).val().length;
+      var $cl = $('#charsLeft')
       if (charsLeft < 20)
         $cl.css('color', 'red');
       else
