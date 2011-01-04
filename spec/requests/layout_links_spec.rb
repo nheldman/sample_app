@@ -1,4 +1,5 @@
 require 'spec_helper'
+include ActionView::Helpers::TextHelper  # for pluralize method
 
 describe "LayoutLinks" do
 
@@ -65,6 +66,13 @@ describe "LayoutLinks" do
       visit root_path
       response.should have_selector("a", :href => user_path(@user),
                                          :content => "Profile")
+    end
+
+    it "should show the correct number of microposts in the sidebar" do
+      visit root_path
+      microposts_display = pluralize(@user.microposts.count, "micropost")
+      response.should have_selector("span.microposts",
+                                    :content => microposts_display)
     end
   end
 end

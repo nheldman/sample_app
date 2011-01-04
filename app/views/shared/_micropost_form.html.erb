@@ -1,7 +1,22 @@
+<script type="text/javascript">
+  $j(function(){
+    $j('#micropost_content').keyup(function() {
+      var charsLeft = 140 - $j(this).val().length;
+      var $cl = $j('#charsLeft')
+      if (charsLeft < 20)
+        $cl.css('color', 'red');
+      else
+        $cl.css('color', 'black');           
+      $cl.html(charsLeft + " characters")
+  });
+});
+</script>
+
 <%= form_for @micropost do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   <div class="field">
     <%= f.text_area :content %>
+    <div id="charsLeft">140 characters</div>
   </div>
   <div class="actions">
     <%= f.submit "Submit" %>
