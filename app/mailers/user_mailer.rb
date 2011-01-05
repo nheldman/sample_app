@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
   default :from => "notifications@example.com"
-  default_url_options[:host] = "localhost:3000"
+  default_url_options[:host] = "stark-water-713.heroku.com"
 
   def welcome_email(user)
     @user = user
