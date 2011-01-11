@@ -31,6 +31,10 @@ GEM
     annotate-models (1.0.4)
     arel (2.0.6)
     builder (2.1.2)
+    daemons (1.1.0)
+    delayed_job (2.1.2)
+      activesupport (~> 3.0)
+      daemons
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -101,6 +105,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate-models
+  delayed_job
   factory_girl_rails
   faker
   gravatar_image_tag

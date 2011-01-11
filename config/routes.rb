@@ -16,6 +16,7 @@ SampleApp::Application.routes.draw do
   match '/about'   => 'pages#about'
   match '/help'    => 'pages#help'
   
+  match '/:locale' => 'pages#home'
   root :to => 'pages#home'
 
   # The priority is based upon order of creation:

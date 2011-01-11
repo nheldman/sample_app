@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_filter :set_locale
+
   def home
     @title = "Home"
     if signed_in?
@@ -18,4 +20,11 @@ class PagesController < ApplicationController
   def help
     @title = "Help"
   end
+
+  private
+    
+    def set_locale
+      # if params[:locale] is nil then I18n.default_locale will be used
+      I18n.locale = params[:locale]
+    end
 end
